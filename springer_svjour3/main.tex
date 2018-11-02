@@ -1,0 +1,163 @@
+%%%%%%%%%%%%%%%%%%%%%%% file template.tex %%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% This is a general template file for the LaTeX package SVJour3
+% for Springer journals.          Springer Heidelberg 2010/09/16
+%
+% Copy it to a new file with a new name and use it as the basis
+% for your article. Delete % signs as needed.
+%
+% This template includes a few options for different layouts and
+% content for various journals. Please consult a previous issue of
+% your journal as needed.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\RequirePackage{fix-cm}
+
+% OPTIONS
+% - draft
+% - smallcondensed: one column
+% - smallcondensed: one column, second format
+% - twocolumn
+% - table: required to be passed so package 'xcolor' is loaded correctly
+\documentclass[natbib,table]{svjour3}                     % onecolumn (standard format)
+%\documentclass[smallcondensed]{svjour3}     % onecolumn (ditto)
+% \documentclass[smallextended]{svjour3}       % onecolumn (second format)
+%\documentclass[twocolumn]{svjour3}          % twocolumn
+%
+\smartqed  % flush right qed marks, e.g. at end of proof
+%
+\usepackage{amsmath}
+%
+\usepackage[english]{babel}
+\usepackage{blindtext}
+%
+\usepackage{booktabs}
+%
+\usepackage{url}
+%
+\usepackage{tikz}
+%
+\usepackage{pifont}
+%
+\usepackage{subcaption} % For side by side
+% \captionsetup{compatibility=false}
+%
+\usepackage{mathptmx}      % use Times fonts if available on your TeX system
+%
+\usepackage{xcolor}
+%
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks = true,
+    citecolor = {blue},   % for citep, citet
+    linkcolor = {magenta},  % for sections etc
+}
+
+
+% see http://latexcolor.com
+\definecolor{alizarin}{rgb}{0.82, 0.1, 0.26}
+\definecolor{darkgreen}{HTML}{013220}
+\colorlet{darkgreen30}{darkgreen!30}
+
+
+\journalname{XXX\_MyJournalName\_XXX}
+%
+\begin{document}
+
+\title{Insert your title here\thanks{Grants or other notes
+about the article that should go on the front page should be
+placed here. General acknowledgments should be placed at the end of the article.}
+}
+\subtitle{Do you have a subtitle?\\ If so, write it here}
+
+\titlerunning{Short form of title}        % if too long for running head
+
+\author{First Author         \and
+        Second Author %etc.
+}
+
+\authorrunning{Short form of author list} % if too long for running head
+
+\institute{F. Author \at
+  first address \\
+  Tel.: +123-45-678910\\
+  Fax: +123-45-678910\\
+  \email{fauthor@example.com}           %  \\
+% \emph{Present address:} of F. Author  %  if needed
+  \and
+  S. Author \at
+  second address
+}
+
+\date{Received: date / Accepted: date}
+% The correct dates will be entered by the editor
+
+\maketitle
+
+\begin{abstract}
+% CONTEXT & MOTIVATION: Situate and motivate your research.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+Luctus venenatis lectus magna fringilla urna porttitor. Sed enim ut sem viverra.
+% QUESTION/PROBLEM: Formulate the specific question/problem addressed by the paper.
+Risus ultricies tristique nulla aliquet. Scelerisque fermentum dui faucibus in ornare quam.
+In tellus integer feugiat scelerisque varius morbi enim nunc faucibus.
+% PRINCIPAL IDEAS/RESULT: Summarize the ideas and results described in your paper. State, where appropriate, your research approach and methodology.
+Praesent semper feugiat nibh sed pulvinar proin gravida hendrerit.
+Vitae sapien pellentesque habitant morbi tristique.
+% CONTRIBUTION: State the main contribution of your paper. What’s the value you add (to theory, to practice, or to whatever you think that the paper adds value). Also state the limitations of your results.
+Ipsum dolor sit amet consectetur adipiscing elit duis tristique sollicitudin.
+Gravida arcu ac tortor dignissim.
+\keywords{First keyword \and Second keyword \and More}
+\end{abstract}
+
+
+\section{Citations}
+\label{sec:1}
+Text with citations \texttt{citep}~\citep{comics/marvel/StarkR18} and \texttt{citet}~\citet{Goossens:1994:LC:561206}.
+\subsection{Subsection title}
+\label{sec:2}
+Don't forget to give each section and subsection a unique label (see Sect.~\ref{sec:1}).
+\paragraph{Paragraph headings} Use paragraph headings as needed.
+\begin{equation}
+a^2+b^2=c^2
+\end{equation}
+\blindtext[1]
+
+\section{Color}
+Colors can be found here \url{http://latexcolor.com}.
+\begin{itemize}
+  \item This is \textcolor{alizarin}{alizarin} defined as RGB.
+  \item This is \textcolor{darkgreen}{\textbf{darkgreen}} defined as HTML.
+  \item This is \colorbox{darkgreen30}{30 \% darkgreen} shaded.
+\end{itemize}
+
+
+\section{Tables Side by Side}
+This is a link to Table~\ref{tbl:tbl_side_by_side}, left~\ref{tbl:tbl_side_by_side:left} and right~\ref{tbl:tbl_side_by_side:right}.
+\input{tbl_side_by_side.tex}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+
+\blindtext[1]
+
+\section{Annotated Figures}
+This is a link to the original Figure~\ref{fig:figure} and the annotated Figure~\ref{fig:annotated_figure}.
+%
+\begin{figure}
+\includegraphics[trim={0 0cm 0 0cm},clip]{../_shared/figure6x4.pdf}
+\caption{Original Figure}\label{fig:figure}
+\end{figure}
+%
+\input{fig_annotated}
+%
+\blindtext[1]
+
+\begin{acknowledgements}
+If you'd like to thank anyone, place your comments here and remove the percent signs.
+\end{acknowledgements}
+
+% BibTeX users please use one of
+\bibliographystyle{spbasic}      % basic style, author-year citations
+\bibliography{../_shared/references.bib}   % name your BibTeX data base
+
+\end{document}

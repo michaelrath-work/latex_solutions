@@ -1,0 +1,39 @@
+% !TEX root = main.tex
+\begin{table}
+% \centering
+
+\renewcommand{\arraystretch}{1.2}
+\setlength{\tabcolsep}{5pt}
+
+\caption{Caption goes on Top}\label{tbl:tbl_side_by_side}
+
+\begin{subtable}[b]{0.37\textwidth}
+\centering
+\begin{tabular}{lcc}
+\toprule
+first & second & third \\
+\midrule
+0 & A & B \\
+\bottomrule
+\end{tabular}
+\caption{Left}\label{tbl:tbl_side_by_side:left}
+\end{subtable}
+%
+\,
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+\begin{subtable}[b]{0.37\textwidth}
+\centering
+\begin{tabular}{lcccc}
+\toprule
+first & second & third & fourth & fifth \\
+\midrule
+0 & A & B & C & D \\
+1 & A & B & C & D \\
+2 & A & B & C & D \\
+\bottomrule
+\end{tabular}
+\caption{Right}\label{tbl:tbl_side_by_side:right}
+\end{subtable}
+
+\end{table}
